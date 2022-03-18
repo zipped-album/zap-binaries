@@ -1,8 +1,10 @@
 # Pre-compiled binaries for Zipped Album Player (ZAP)
 
-## Building FFmpeg 4
+## Build instructions
 
-### Debian
+### FFmpeg 4
+
+#### Debian
 ```
 sudo apt-get update -qq && sudo apt-get -y install \
   autoconf \

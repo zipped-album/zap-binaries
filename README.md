@@ -1,4 +1,4 @@
-# Pre-compiled binarie for Zipped Album Player (ZAP)
+# Pre-compiled binaries for Zipped Album Player (ZAP)
 
 ## Building FFmpeg 4
 

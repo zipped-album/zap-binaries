@@ -18,7 +18,7 @@ sudo apt-get update -qq && sudo apt-get -y install \
   wget \
   zlib1g-dev \
   yasm \
-  nams \
+  nasm \
   patchelf
 
 mkdir -p ~/ffmpeg_sources ~/bin

@@ -55,5 +55,5 @@ cp ~/ffmpeg_sources/ffmpeg-4.4.1/LICENSE.md archive
 cp ~/ffmpeg_sources/ffmpeg-4.4.1/COPYING* archive
 cd archive
 platform=$(uname -m)
-zip ffmpeg4-linux_x${platform: -2}.zip *
+zip ffmpeg4-linux_$platform.zip *
 ```

@@ -4,7 +4,7 @@
 
 ### FFmpeg 4
 
-#### Debian
+#### Debian (including Raspberry Pi OS)
 ```
 sudo apt-get update -qq && sudo apt-get -y install \
   autoconf \
@@ -19,7 +19,8 @@ sudo apt-get update -qq && sudo apt-get -y install \
   zlib1g-dev \
   yasm \
   nasm \
-  patchelf
+  patchelf \
+  zip
 
 mkdir -p ~/ffmpeg_sources ~/bin
 

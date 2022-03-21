@@ -40,7 +40,7 @@ PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./conf
   --enable-shared \
   --disable-avdevice \
   --disable-postproc && \
-PATH="$HOME/bin:$PATH" make && \
+PATH="$HOME/bin:$PATH" make -j$(nproc) && \
 make install && \
 hash -r
 
@@ -95,7 +95,7 @@ PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./conf
   --enable-shared \
   --disable-avdevice \
   --disable-postproc && \
-PATH="$HOME/bin:$PATH" make && \
+PATH="$HOME/bin:$PATH" make -j$(nproc) && \
 make install && \
 hash -r
 

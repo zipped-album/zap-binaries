@@ -1,4 +1,4 @@
-# Pre-compiled binaries for Zipped Album Player (ZAP)
+# Pre-compiled binaries for [Zipped Album Player (ZAP)](https://github.com/zipped-album/zap)
 
 ## Build instructions
 

@@ -47,11 +47,15 @@ hash -r
 cd ~/ffmpeg_build/lib
 
 for file in *.so.*.*.*;
+  do mv $file $(echo $file | cut -d'.' -f -3)
+done
+
+for file in *.so.*;
     do patchelf --set-rpath \$ORIGIN "$file";
 done;
 
 mkdir archive
-cp *.so.*.*.* archive
+cp *.so.* archive
 cp ~/ffmpeg_sources/ffmpeg-4.4.1/LICENSE.md archive
 cp ~/ffmpeg_sources/ffmpeg-4.4.1/COPYING* archive
 cd archive
@@ -102,11 +106,15 @@ hash -r
 cd ~/ffmpeg_build/lib
 
 for file in *.so.*.*.*;
+  do mv $file $(echo $file | cut -d'.' -f -3)
+done
+
+for file in *.so.*;
     do patchelf --set-rpath \$ORIGIN "$file";
 done;
 
 mkdir archive
-cp *.so.*.*.* archive
+cp *.so.* archive
 cp ~/ffmpeg_sources/ffmpeg-4.4.1/LICENSE.md archive
 cp ~/ffmpeg_sources/ffmpeg-4.4.1/COPYING* archive
 cd archive

@@ -2,9 +2,7 @@
 
 ## Build instructions
 
-### FFmpeg 4
-
-#### Debian
+### Debian
 ```
 FFMPEG_VERSION="4.4.1"
 
@@ -66,7 +64,7 @@ MAJOR_VERSION=$(echo "$FFMPEG_VERSION" | cut -d '.' -f 1)
 zip ffmpeg${MAJOR_VERSION}-linux_$platform.zip *
 ```
 
-#### Raspbery Pi OS
+### Raspbery Pi OS
 ```
 FFMPEG_VERSION="4.4.1"
 
@@ -128,7 +126,7 @@ MAJOR_VERSION=$(echo "$FFMPEG_VERSION" | cut -d '.' -f 1)
 zip ffmpeg${MAJOR_VERSION}-linux_$platform.zip *
 ```
 
-#### MacOS
+### MacOS
 ```
 FFMPEG_VERSION="4.4.5"
 

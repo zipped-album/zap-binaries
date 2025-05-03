@@ -130,7 +130,7 @@ zip ffmpeg${MAJOR_VERSION}-linux_$platform.zip *
 
 #### MacOS
 ```
-FFMPEG_VERSION="4.4.1"
+FFMPEG_VERSION="4.4.5"
 
 brew install \
   automake \

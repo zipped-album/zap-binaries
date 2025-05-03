@@ -6,6 +6,8 @@
 
 #### Debian
 ```
+FFMPEG_VERSION="4.4.1"
+
 sudo apt-get update -qq && sudo apt-get -y install \
   autoconf \
   automake \
@@ -25,9 +27,9 @@ sudo apt-get update -qq && sudo apt-get -y install \
 mkdir -p ~/ffmpeg_sources ~/bin
 
 cd ~/ffmpeg_sources && \
-wget -O ffmpeg-4.4.1.tar.bz2 http://ffmpeg.org/releases/ffmpeg-4.4.1.tar.bz2 && \
-tar xjvf ffmpeg-4.4.1.tar.bz2 && \
-cd ffmpeg-4.4.1 && \
+wget -O ffmpeg-${FFMPEG_VERSION}.tar.bz2 http://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.bz2 && \
+tar xjvf ffmpeg-${FFMPEG_VERSION}.tar.bz2 && \
+cd ffmpeg-${FFMPEG_VERSION} && \
 PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
   --prefix="$HOME/ffmpeg_build" \
   --extra-cflags="-I$HOME/ffmpeg_build/include" \
@@ -56,15 +58,18 @@ done;
 
 mkdir archive
 cp *.so.* archive
-cp ~/ffmpeg_sources/ffmpeg-4.4.1/LICENSE.md archive
-cp ~/ffmpeg_sources/ffmpeg-4.4.1/COPYING* archive
+cp ~/ffmpeg_sources/ffmpeg-${FFMPEG_VERSION}/LICENSE.md archive
+cp ~/ffmpeg_sources/ffmpeg-${FFMPEG_VERSION}/COPYING* archive
 cd archive
 platform=$(uname -m)
-zip ffmpeg4-linux_$platform.zip *
+MAJOR_VERSION=$(echo "$FFMPEG_VERSION" | cut -d '.' -f 1)
+zip ffmpeg${MAJOR_VERSION}-linux_$platform.zip *
 ```
 
 #### Raspbery Pi OS
 ```
+FFMPEG_VERSION="4.4.1"
+
 sudo apt-get update -qq && sudo apt-get -y install \
   autoconf \
   automake \
@@ -84,9 +89,9 @@ sudo apt-get update -qq && sudo apt-get -y install \
 mkdir -p ~/ffmpeg_sources ~/bin
 
 cd ~/ffmpeg_sources && \
-wget -O ffmpeg-4.4.1.tar.bz2 http://ffmpeg.org/releases/ffmpeg-4.4.1.tar.bz2 && \
-tar xjvf ffmpeg-4.4.1.tar.bz2 && \
-cd ffmpeg-4.4.1 && \
+wget -O ffmpeg-${FFMPEG_VERSION}.tar.bz2 http://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.bz2 && \
+tar xjvf ffmpeg-${FFMPEG_VERSION}.tar.bz2 && \
+cd ffmpeg-${FFMPEG_VERSION} && \
 PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
   --prefix="$HOME/ffmpeg_build" \
   --extra-cflags="-I$HOME/ffmpeg_build/include" \
@@ -115,15 +120,18 @@ done;
 
 mkdir archive
 cp *.so.* archive
-cp ~/ffmpeg_sources/ffmpeg-4.4.1/LICENSE.md archive
-cp ~/ffmpeg_sources/ffmpeg-4.4.1/COPYING* archive
+cp ~/ffmpeg_sources/ffmpeg-${FFMPEG_VERSION}/LICENSE.md archive
+cp ~/ffmpeg_sources/ffmpeg-${FFMPEG_VERSION}/COPYING* archive
 cd archive
 platform=$(uname -m)
-zip ffmpeg4-linux_$platform.zip *
+MAJOR_VERSION=$(echo "$FFMPEG_VERSION" | cut -d '.' -f 1)
+zip ffmpeg${MAJOR_VERSION}-linux_$platform.zip *
 ```
 
 #### MacOS
 ```
+FFMPEG_VERSION="4.4.1"
+
 brew install \
   automake \
   fdk-aac \
@@ -137,9 +145,9 @@ brew install \
 mkdir -p ~/ffmpeg_sources ~/bin
 
 cd ~/ffmpeg_sources && \
-wget -O ffmpeg-4.4.1.tar.bz2 http://ffmpeg.org/releases/ffmpeg-4.4.1.tar.bz2 && \
-tar xjvf ffmpeg-4.4.1.tar.bz2 && \
-cd ffmpeg-4.4.1 && \
+wget -O ffmpeg-${FFMPEG_VERSION}.tar.bz2 http://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.bz2 && \
+tar xjvf ffmpeg-${FFMPEG_VERSION}.tar.bz2 && \
+cd ffmpeg-${FFMPEG_VERSION} && \
 PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH=":/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/opt/X11/lib/pkgconfig" ./configure \
   --prefix="$HOME/ffmpeg_build" \
   --extra-cflags="-I$HOME/ffmpeg_build/include" \
@@ -177,9 +185,10 @@ done
 
 mkdir archive
 cp *.*.dylib archive
-cp ~/ffmpeg_sources/ffmpeg-4.4.1/LICENSE.md archive
-cp ~/ffmpeg_sources/ffmpeg-4.4.1/COPYING* archive
+cp ~/ffmpeg_sources/ffmpeg-${FFMPEG_VERSION}/LICENSE.md archive
+cp ~/ffmpeg_sources/ffmpeg-${FFMPEG_VERSION}/COPYING* archive
 cd archive
 platform=$(uname -m)
-zip ffmpeg4-darwin_$platform.zip *
+MAJOR_VERSION=$(echo "$FFMPEG_VERSION" | cut -d '.' -f 1)
+zip ffmpeg${MAJOR_VERSION}-darwin_$platform.zip *
 ```
